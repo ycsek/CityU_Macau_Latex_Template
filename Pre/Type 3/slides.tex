@@ -1,0 +1,66 @@
+\documentclass{beamer}
+\input{Theme/Packages.tex}
+\usetheme{CityU}
+
+\title{Title }
+\titlegraphic{\includegraphics[width=5.0cm]{Theme/Logos/CUM.png}}
+\author{Name}
+\institute{City University of Macau}
+\date{\today}
+
+\begin{document}
+
+{\setbeamertemplate{footline}{} 
+\frame{\titlepage}}
+
+\section*{Outline}\begin{frame}{Outline}\tableofcontents\end{frame}
+
+\section{Introduction}
+\begin{frame}{Introduction}
+  \LaTeX beamer template for City University of Macau.
+\end{frame}
+
+\section{Equations}
+  
+\subsection{Example}
+\begin{frame}{Example}
+\only<1>{
+Let \(p(x)=\mathcal{N}(\mu\textsubscript{1},\,\sigma^{2}\textsubscript{1})\) and \(q(x)=\mathcal{N}(\mu\textsubscript{2},\,\sigma^{2}\textsubscript{2})\): \\
+\begin{equation}
+\mathcal{N}=\frac{1}{\sigma\,\sqrt{2\,\pi}}\,\E^{-\frac{\left(x-\mu\right)^2}{2\,\sigma^2} }
+\end{equation}}
+\only<2>{
+Kullback-Leibler divergence for continuous probabilities:
+\begin{align*}
+	D(p,q)=&\int p(x) \log \frac{p(x)}{q(x)}\ud x\\
+    =& \int p(x) \,\ln p(x) \ud x -\int p(x) \,\ln q(x) \ud x\\
+	=&\,\frac{1}{2} \ln\left(2\,\pi\,\sigma_2^{2}\right) +\frac{\sigma_1^{2}+\left(\mu_1-\mu_2 \right)^2 }{2\,\sigma_2^2}-\frac{1}{2}\left( 1+\ln 2\,\pi\,\sigma_1^2\right) \\
+	=&\,\ln\frac{\sigma_2}{\sigma_1} +\frac{\sigma_1^{2}+\left(\mu_1-\mu_2 \right)^2 }{2\,\sigma_2^2}-\frac{1}{2}
+\end{align*}
+}
+\end{frame}
+
+\begin{frame}[fragile]{Example}
+\begin{block}{Greatest Common Divisor}
+\begin{lstlisting}[firstnumber=1, label=glabels, xleftmargin=10pt] 
+def greatest_c_remainder(a,b):
+	'''Greatest common divisor of a and b'''
+	r = a % b
+	if r == 0:
+		return b
+	else:
+		m = b
+		n = r
+	return greatest_c_remainder(m,n)
+
+\end{lstlisting}
+\end{block}
+\end{frame}
+
+\section*{Acknowledgement}  
+\begin{frame}
+\textcolor{cityugreen}{\large{\centerline{ Your feedback will be highly appreciated!}}}
+\end{frame}
+
+\end{document}
+

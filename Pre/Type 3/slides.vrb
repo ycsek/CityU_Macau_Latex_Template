@@ -1,0 +1,15 @@
+\frametitle{Example}
+\begin{block}{Greatest Common Divisor}
+\begin{lstlisting}[firstnumber=1, label=glabels, xleftmargin=10pt]
+def greatest_c_remainder(a,b):
+^^I'''Greatest common divisor of a and b'''
+^^Ir = a % b
+^^Iif r == 0:
+^^I^^Ireturn b
+^^Ielse:
+^^I^^Im = b
+^^I^^In = r
+^^Ireturn greatest_c_remainder(m,n)
+
+\end{lstlisting}
+\end{block}
